@@ -4,7 +4,7 @@
 import java.io.*;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws NumberFormatException,IOException {
         String input;
         int nInput;
         String input2;
@@ -34,8 +34,8 @@ public class Main {
             try {
                 nInput = Integer.parseInt(input);
             }
-            catch (NumberFormatException e){
-                System.out.println("Неверный ввод. Введите цифру номера задания");
+            catch (NumberOutOf1to3 e){
+                e.Message();
                 continue;
             }
             if (nInput == 1)
