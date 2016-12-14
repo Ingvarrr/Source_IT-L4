@@ -34,8 +34,8 @@ public class Main {
             try {
                 nInput = Integer.parseInt(input);
             }
-            catch (NumberOutOf1to3 e){
-                e.Message();
+            catch (NumberFormatException e){
+                System.out.println("Неверный ввод. Введите цифру номера задания");
                 continue;
             }
             if (nInput == 1)
@@ -45,8 +45,7 @@ public class Main {
             else if (nInput == 3)
                 System.out.println("Вы ввели номер задания 3, введите размер Вашей ЗП ");
             else {
-                System.out.println("Неправильный ввод номера задания, введите его еще раз (1,2,3)");
-                continue;
+                throw new NumberOutOf1to3("Неправильный ввод номера задания, введите его еще раз (1,2,3)");
             }
             break;
             }
